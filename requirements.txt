@@ -1,0 +1,12 @@
+langgraph
+langchain-openai
+openai
+python-dotenv
+pydantic
+fastapi
+uvicorn[standard]
+httpx
+sqlalchemy
+psycopg[binary]
+pytest
+pytest-asyncio
