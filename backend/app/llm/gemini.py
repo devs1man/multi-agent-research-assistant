@@ -17,7 +17,7 @@ class GeminiLLM(BaseLLM):
             "gemini-3.8-flash"
         )
 
-        self.client = genai.client(api_key=api_key)
+        self.client = genai.Client(api_key=api_key)
 
     def generate(
             self, 
