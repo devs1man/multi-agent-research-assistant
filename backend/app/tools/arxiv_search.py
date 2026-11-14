@@ -5,6 +5,22 @@ BASE_URL = "https://export.arxiv.org/api/query"
 ATOM = "{http://www.w3.org/2005/Atom}"
 
 def arxiv_search(query: str, max_results: int = 5 ):
+
+    if not isinstance(query, str):
+        raise TypeError("Query must be a string")
+    
+    if not query.strip():
+        raise ValueError("Search query cannot be empty")
+
+    if isinstance(max_results, bool) or not isinstance(max_results, int):
+        raise TypeError("max_results must be an integer")
+
+    if max_results<=0:
+        raise ValueError("max_results should be greater than zero")
+
+    if max_results>100:
+        raise ValueError("max_results should not be greater than 100")
+    
     params = {
         "search_query" : "all:" + query,
         "start": 0,
